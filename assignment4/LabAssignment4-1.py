@@ -53,19 +53,21 @@ def render():
 
     #green arm drawing
     glPushMatrix()
+    glRotatef(t*(180/np.pi), 0, 0, 1) # green 좌표계 기준으로 도는것
+    
+    #draw green box
+    glPushMatrix()
     glScalef(0.2, .2, .2)
     glColor3ub(0, 255, 0)
-    glRotatef(t*(180/np.pi), 0, 0, 1) # green 좌표계 기준으로 도는것
     drawBox()
     glPopMatrix()
-
-    glPushMatrix()
-    glRotatef(t*(180/np.pi), 0, 0, 1) # green 좌표계 기준으로 도는것
+    
+    #draw green's frame
     drawFrame()
     glPopMatrix()
 
+    #3 transformation
     glPopMatrix()
-
     glPopMatrix()
     glPopMatrix()
 
