@@ -6,7 +6,9 @@ import numpy as np
 def render(T): 
     glClear(GL_COLOR_BUFFER_BIT) #Error
     glLoadIdentity()
-
+    glRotatef(45,0.0,0.0,1.0)
+    glTranslatef(.5,0.0,.0)
+    
     # draw cooridnate 
     glBegin(GL_LINES) 
     glColor3ub(255, 0, 0) 
@@ -43,6 +45,7 @@ def main():
         #s = np.sin(t)
 
         #T = np.array([[2.,s], [s,2.]])
+       
         T = np.array([[2.,0.], [0.,2.]])
         render(T)
         glfw.swap_buffers(window)
